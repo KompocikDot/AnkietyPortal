@@ -60,6 +60,7 @@
                @yield('ankieta_add')
                @yield('admin_content')   
           @else
+               @yield('single_ankieta')
                @yield('user_content')
           @endif
      @endauth

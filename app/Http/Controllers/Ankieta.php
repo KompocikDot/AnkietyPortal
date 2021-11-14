@@ -10,8 +10,7 @@ use Illuminate\Support\Facades\DB;
 class Ankieta extends Controller
 {
     public function ReturnAnkieta() {
-        $user = Auth::user()->id;
-        $ifAdmin = $user == 1;
+        $ifAdmin = Auth::user()->id == 1;
         return view('pages.ankiety_add', compact('ifAdmin'));
     }
 
@@ -48,20 +47,20 @@ class Ankieta extends Controller
 
 
     public function ReturnDashData() {
-            $user = Auth::user()->id;
-            $ifAdmin = $user == 1;
-        
-            if ($ifAdmin) { 
-                return view('pages.admincontentdash', compact('ifAdmin')); // widok admina
-            } else {
-                $res = array(DB::table('ankieties')->select('ankieties.*')->get());
-                return view('pages.usercontentdash', compact('ifAdmin', 'res')); // widok usera
-            }
-        
+        $ifAdmin = Auth::user()->id == 1;
+    
+        if ($ifAdmin) { 
+            return view('pages.admincontentdash', compact('ifAdmin')); // widok admina
+        } else {
+            $res = array(DB::table('ankieties')->select()->get());
+            return view('pages.usercontentdash', compact('ifAdmin', 'res')); // widok usera
+        }
     }
 
-    public function GetExactAnkieta($id) {
-        //TODO: dodaj obsluge widoku
-        print_r($id);
+    public function GetExactAnkieta(int $id) {
+        $ifAdmin = Auth::user()->id == 1;
+        $res = DB::table('ankieties')->select()->where("id", "=", $id)->first();
+
+        return view("pages.single_ankieta", compact('ifAdmin', 'res'));
     }
 }
