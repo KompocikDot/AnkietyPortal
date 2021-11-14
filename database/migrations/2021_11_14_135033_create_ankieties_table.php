@@ -16,6 +16,7 @@ class CreateAnkietiesTable extends Migration
         Schema::create('ankieties', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string("nazwa_ankiety");
 
             $table->string("pytanie1");
             $table->string("pytanie2");

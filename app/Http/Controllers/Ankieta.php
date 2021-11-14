@@ -19,6 +19,7 @@ class Ankieta extends Controller
         DB::table('ankieties')->insert([
             "created_at" => Carbon::now(),
             "updated_at" => Carbon::now(),
+            "nazwa_ankiety" => $req->nazwa_ankiety,
 
             "pytanie1" => $req->pytanie1,
             "pytanie2" => $req->pytanie2,
@@ -51,13 +52,10 @@ class Ankieta extends Controller
             $ifAdmin = $user == 1;
         
             if ($ifAdmin) { 
-                return view('pages.dashcontent', compact('ifAdmin')); // widok admina
+                return view('pages.admincontentdash', compact('ifAdmin')); // widok admina
             } else {
-                $res = DB::table('ankieties')->join('odpowiedzis', 'odpowiedzis.ankieta_id', "ankieties.id")->where("user_id", "=", $user)->select("ankieta_id")->get();
-                foreach($res as $r) {
-                    print_r($r);
-                }
-                return view('pages.dashcontent', compact('ifAdmin', 'res')); // widok usera
+                $res = "";//DB::table('ankieties')->select('id')->get();
+                return view('pages.usercontentdash', compact('ifAdmin', 'res')); // widok usera
             }
         
     }

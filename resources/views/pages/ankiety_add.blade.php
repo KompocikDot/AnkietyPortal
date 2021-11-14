@@ -8,6 +8,13 @@
      @for ($i = 1; $i <= 6; $i++)
      @if ($i == 1)
           <form action="{{ route('ankiety_add') }}" method="POST">
+               <div class="card-body">
+                    <div class="mb-3">
+                         <label for="validationCustom01" class="form-label">Tytuł ankiety</label>
+                         <input type="text" class="form-control" name="nazwa_ankiety" required>
+                    </div>
+               </div>
+               <br>
           @csrf 
      @endif
 
