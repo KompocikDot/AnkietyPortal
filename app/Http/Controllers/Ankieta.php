@@ -54,9 +54,14 @@ class Ankieta extends Controller
             if ($ifAdmin) { 
                 return view('pages.admincontentdash', compact('ifAdmin')); // widok admina
             } else {
-                $res = "";//DB::table('ankieties')->select('id')->get();
+                $res = array(DB::table('ankieties')->select('ankieties.*')->get());
                 return view('pages.usercontentdash', compact('ifAdmin', 'res')); // widok usera
             }
         
+    }
+
+    public function GetExactAnkieta($id) {
+        //TODO: dodaj obsluge widoku
+        print_r($id);
     }
 }
