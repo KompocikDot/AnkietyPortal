@@ -23,6 +23,7 @@ Route::get('/', [Main::class, "ReturnMain"])->name('main');
 Route::get('/ankiety', [Ankieta::class, "ReturnAnkieta"])->name('ankiety_get');
 Route::post('/ankiety', [Ankieta::class, "AddAnkieta"])->name('ankiety_add');
 Route::get('/ankieta/{id}', [Ankieta::class, "GetExactAnkieta"])->name('ankiety_one');
+Route::post('/ankiety/add', [Ankieta::class, "AddAnkietaAnswer"])->name('add_answer');
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [Ankieta::class, "ReturnDashData"])->name('dashboard');

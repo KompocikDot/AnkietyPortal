@@ -63,4 +63,8 @@ class Ankieta extends Controller
 
         return view("pages.single_ankieta", compact('ifAdmin', 'res'));
     }
+
+    public function AddAnkietaAnswer(Request $req) {
+        // TODO: dodaj obsługe dodawania odpowiedzi ;)
+    }
 }
