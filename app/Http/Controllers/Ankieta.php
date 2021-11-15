@@ -42,7 +42,7 @@ class Ankieta extends Controller
             "p6_poprawna" => $req->poprawna_6,
         ]);
 
-        redirect("/ankiety");
+        return redirect("/ankiety");
     }
 
 
@@ -65,6 +65,21 @@ class Ankieta extends Controller
     }
 
     public function AddAnkietaAnswer(Request $req) {
-        // TODO: dodaj obsługe dodawania odpowiedzi ;)
+        $ank_id = $req->ankieta_id;
+
+        DB::table('odpowiedzis')->insert([
+            "created_at" => Carbon::now(),
+            "updated_at" => Carbon::now(),
+            "user_id" => Auth::user()->id,
+            "ankieta_id" => $ank_id,
+            "odp1" => $req->odp1,
+            "odp2" => $req->odp2,
+            "odp3" => $req->odp3,
+            "odp4" => $req->odp4,
+            "odp5" => $req->odp5,
+            "odp6" => $req->odp6,
+        ]);
+        
+        return redirect()->route("dashboard");
     }
 }
