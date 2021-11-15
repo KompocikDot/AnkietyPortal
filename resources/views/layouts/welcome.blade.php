@@ -23,7 +23,7 @@
                               </li>
                               @auth
                                    <li class="nav-item">
-                                        <a class="nav-link disabled" href="{{ url('/dashboard') }}">Disabled</a>
+                                        <a class="nav-link" href="{{ url('/dashboard') }}">Dashboard</a>
                                    </li>
                               @else
                                    <li class="nav-item">
