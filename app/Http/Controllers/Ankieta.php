@@ -42,7 +42,7 @@ class Ankieta extends Controller
             "p6_poprawna" => $req->poprawna_6,
         ]);
 
-        return redirect("/ankiety");
+        return redirect()->route('ankiety_get');
     }
 
 
