@@ -25,7 +25,7 @@
                                    <a class="nav-link" href="{{ route('ankiety_get') }}">Dodaj Ankiete</a>
                               </li>
                               <li class="nav-item">
-                                   <a class="nav-link" href="#">Statystyki</a>
+                                   <a class="nav-link" href="{{ route('all_stats') }}">Statystyki</a>
                               </li>
                          @else
                               <li class="nav-item">
@@ -58,7 +58,9 @@
      @auth
           @if ($ifAdmin)
                @yield('ankieta_add')
-               @yield('admin_content')   
+               @yield('admin_content')
+               @yield('stats')
+               @yield('single_stat')
           @else
                @yield('single_ankieta')
                @yield('user_content')

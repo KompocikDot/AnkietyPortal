@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Ankieta;
 use App\Http\Controllers\Main;
+use App\Http\Controllers\Stats;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
@@ -25,5 +26,7 @@ Route::post('/ankiety', [Ankieta::class, "AddAnkieta"])->name('ankiety_add');
 Route::get('/ankieta/{id}', [Ankieta::class, "GetExactAnkieta"])->name('ankiety_one');
 Route::post('/ankiety/add', [Ankieta::class, "AddAnkietaAnswer"])->name('add_answer');
 
+Route::get('/stats', [Stats::class, "ReturnAllStatsPage"])->name('all_stats');
+Route::get('/stats/{id}', [Stats::class, "ReturnStatsPage"])->name('single_stats');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [Ankieta::class, "ReturnDashData"])->name('dashboard');
