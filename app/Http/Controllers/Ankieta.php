@@ -34,12 +34,12 @@ class Ankieta extends Controller
             "p5_odp" => implode("||", array($req->odp_a_5, $req->odp_b_5, $req->odp_c_5, $req->odp_d_5)),
             "p6_odp" => implode("||", array($req->odp_a_6, $req->odp_b_6, $req->odp_c_6, $req->odp_d_6)),
 
-            "p1_poprawna" => $req->poprawna_1,
-            "p2_poprawna" => $req->poprawna_2,
-            "p3_poprawna" => $req->poprawna_3,
-            "p4_poprawna" => $req->poprawna_4,
-            "p5_poprawna" => $req->poprawna_5,
-            "p6_poprawna" => $req->poprawna_6,
+            // "p1_poprawna" => $req->poprawna_1,
+            // "p2_poprawna" => $req->poprawna_2,
+            // "p3_poprawna" => $req->poprawna_3,
+            // "p4_poprawna" => $req->poprawna_4,
+            // "p5_poprawna" => $req->poprawna_5,
+            // "p6_poprawna" => $req->poprawna_6,
         ]);
 
         return redirect()->route('ankiety_get');

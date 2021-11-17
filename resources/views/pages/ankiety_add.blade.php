@@ -43,15 +43,7 @@
                          <label for="validationCustom01" class="form-label">Treść odpowiedzi D:</label>
                          <input type="text" class="form-control" name="odp_d_{{$i}}" required>
                     </div>
-                    <div class="mb-3">
-                         <label for="validationCustom01" class="form-label">Poprawna odpowiedz:</label>
-                         <select class="form-select" name="poprawna_{{$i}}">
-                              <option selected value="a">Odpowiedz A</option>
-                              <option value="b">Odpowiedz B</option>
-                              <option value="c">Odpowiedz C</option>
-                              <option value="d">Odpowiedz D</option>
-                         </select>
-                    </div>
+                    
           </div>
      </div>
      <br>

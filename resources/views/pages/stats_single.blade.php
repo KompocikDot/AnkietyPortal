@@ -46,7 +46,7 @@
             
             {
                     backgroundColor: ['rgb(252, 186, 3)', 'rgb(7, 252, 3)', 'rgb(3, 186, 252)', 'rgb(252, 3, 140)'],
-                    borderColor: 'rgb(255, 99, 132)',
+                    borderColor: 'rgb(255, 255, 255)',
                     data: [{{ $counted_array[$i] }}],
                     },
             
