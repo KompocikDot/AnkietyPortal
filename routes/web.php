@@ -21,12 +21,15 @@ use Illuminate\Support\Facades\DB;
 Route::get('/', [Main::class, "ReturnMain"])->name('main');
 
 
-Route::get('/ankiety', [Ankieta::class, "ReturnAnkieta"])->name('ankiety_get');
 Route::post('/ankiety', [Ankieta::class, "AddAnkieta"])->name('ankiety_add');
-Route::get('/ankieta/{id}', [Ankieta::class, "GetExactAnkieta"])->name('ankiety_one');
 Route::post('/ankiety/add', [Ankieta::class, "AddAnkietaAnswer"])->name('add_answer');
+Route::get('/ankiety', [Ankieta::class, "ReturnAnkieta"])->name('ankiety_get');
+Route::get('/ankieta/{id}', [Ankieta::class, "GetExactAnkieta"])->name('ankiety_one');
 
 Route::get('/stats', [Stats::class, "ReturnAllStatsPage"])->name('all_stats');
 Route::get('/stats/{id}', [Stats::class, "ReturnStatsPage"])->name('single_stats');
+
+Route::get('/answers', [Ankieta::class, "ReturnUserAnkieta"])->name('answers');
+Route::get('/answers/{id}', [Ankieta::class, "ReturnSingleUserAnkieta"])->name('single_answer');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [Ankieta::class, "ReturnDashData"])->name('dashboard');

@@ -2,14 +2,30 @@
 
 
 @section('user_content')
-    <div>Witaj w panelu użytkownika <br> dostępne ankiety:</div>
-    
-    @foreach ($res[0] as $item)
-        <div class="card">
-            <div class="card-body">
-                {{ $item->nazwa_ankiety }}
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col" style="text-align: center">
+            Witaj w panelu użytkownika, dostępne ankiety:
+        </div>
+        
+    </div>
+    <br>
+    @if (sizeof($unresolved) != 0)
+        @foreach ($unresolved as $item)
+            <div class="card">
+                <div class="card-body">
+                    {{ $item->nazwa_ankiety }}
+                </div>
+                <a class="btn btn-primary"href="{{ route('ankiety_one', $item->id) }}">Sprawdź</a>
+            </div><br>
+        @endforeach
+    @else
+        <div class="row">
+            <div class="col" style="text-align: center">
+                NIE ZNALEZIONO DOSTEPNYCH ANKIET
             </div>
-            <button type="button" class="btn btn-primary"><a style="color: white" href="{{ route('ankiety_one', $item->id) }}">Sprawdź</a></button>
-        </div><br>
-    @endforeach
+        </div>
+    @endif
+</div>
 @endsection

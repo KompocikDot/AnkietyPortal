@@ -8,7 +8,7 @@
             <div class="col"> 
                 <div class="card">
                     <div class="card-body">
-                        {{ $item->nazwa_ankiety }} <a class="btn btn-info" href="{{ route('single_stats', $item->id) }}">Sprawdz statystyki</a>
+                        {{ $item->nazwa_ankiety }} <a class="btn btn-primary" href="{{ route('single_stats', $item->id) }}">Sprawdz statystyki</a>
                     </div>
                 </div>
             </div>
