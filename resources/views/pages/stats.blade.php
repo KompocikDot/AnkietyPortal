@@ -8,8 +8,10 @@
             <div class="col"> 
                 <div class="card">
                     <div class="card-body">
-                        {{ $item->nazwa_ankiety }} <a class="btn btn-primary" href="{{ route('single_stats', $item->id) }}">Sprawdz statystyki</a>
+                        {{ $item->nazwa_ankiety }}
                     </div>
+                    <a class="btn btn-primary" href="{{ route('single_stats', $item->id) }}">Sprawdz statystyki</a>
+                    <a class="btn btn-danger" href="{{ route('remove_ankieta', $item->id) }}">Usun ankiete</a>
                 </div>
             </div>
         @endforeach

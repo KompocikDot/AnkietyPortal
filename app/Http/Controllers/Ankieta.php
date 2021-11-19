@@ -72,6 +72,7 @@ class Ankieta extends Controller
             "odp4" => $req->odp4,
             "odp5" => $req->odp5,
             "odp6" => $req->odp6,
+
         ]);
         
         return redirect()->route("dashboard");
@@ -90,5 +91,11 @@ class Ankieta extends Controller
         $ifAdmin = $user_id == 1;
         $answer = DB::table('odpowiedzis')->leftJoin('ankieties', 'ankieties.id', '=', 'odpowiedzis.ankieta_id')->where('odpowiedzis.user_id', '=', $user_id, 'and')->where('odpowiedzis.ankieta_id', '=', $id)->get();
         return view('pages.single_answer', compact('ifAdmin', 'answer'));
+    }
+    
+    public function RemoveAnkieta(int $id)
+    {
+        DB::table('ankieties')->where('id', '=', $id)->delete();
+        return redirect()->route('all_stats');
     }
 }

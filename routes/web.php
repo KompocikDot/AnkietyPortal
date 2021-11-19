@@ -25,6 +25,7 @@ Route::post('/ankiety', [Ankieta::class, "AddAnkieta"])->name('ankiety_add');
 Route::post('/ankiety/add', [Ankieta::class, "AddAnkietaAnswer"])->name('add_answer');
 Route::get('/ankiety', [Ankieta::class, "ReturnAnkieta"])->name('ankiety_get');
 Route::get('/ankieta/{id}', [Ankieta::class, "GetExactAnkieta"])->name('ankiety_one');
+Route::get('/ankiety/delete/{id}', [Ankieta::class, "RemoveAnkieta"])->name('remove_ankieta');
 
 Route::get('/stats', [Stats::class, "ReturnAllStatsPage"])->name('all_stats');
 Route::get('/stats/{id}', [Stats::class, "ReturnStatsPage"])->name('single_stats');

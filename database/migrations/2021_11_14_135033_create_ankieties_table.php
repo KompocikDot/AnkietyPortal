@@ -32,12 +32,6 @@ class CreateAnkietiesTable extends Migration
             $table->string("p5_odp");
             $table->string("p6_odp");
 
-            $table->string("p1_poprawna");
-            $table->string("p2_poprawna");
-            $table->string("p3_poprawna");
-            $table->string("p4_poprawna");
-            $table->string("p5_poprawna");
-            $table->string("p6_poprawna");
         });
     }
 
