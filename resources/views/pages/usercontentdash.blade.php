@@ -6,7 +6,7 @@
 <div class="container">
     <div class="row">
         <div class="col" style="text-align: center">
-            Witaj w panelu użytkownika, dostępne ankiety:
+            <h3>Witaj w panelu użytkownika, dostępne ankiety:</h3>
         </div>
         
     </div>

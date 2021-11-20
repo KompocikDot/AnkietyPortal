@@ -61,6 +61,7 @@
                @yield('admin_content')
                @yield('stats')
                @yield('single_stat')
+               @yield('editpage')
           @else
                @yield('single_ankieta')
                @yield('user_content')

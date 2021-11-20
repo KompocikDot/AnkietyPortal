@@ -5,7 +5,7 @@
     <div class="container">
           <div class="row">
                <div class="col " style="text-align: center">
-                    <b>WITAJ W PANELU ADMINISTRATORA</b>
+                    <h3>WITAJ W PANELU ADMINISTRATORA</h3>
                </div>
           </div>
           <br>
@@ -13,7 +13,7 @@
                <div class="col">
                     <div class="card">
                          <div class="card-body">
-                              <a class="btn btn-primary stretched-link" style="width: 100%" href="{{ route('ankiety_add') }}">DODAJ TEST</a>
+                              <a class="btn btn-primary stretched-link" style="width: 100%" href="{{ route('ankiety_add') }}">DODAJ ANKIETE</a>
                          </div>
                     </div>
                </div>

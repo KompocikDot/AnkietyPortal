@@ -14,23 +14,43 @@
          </div>
          <br>
 
-         @foreach ($answer as $item)
+         @for ($i = 1; $i <= 6; $i++ )
+         @php
+               $pytansko = "pytanie".$i;
+               $odp = "p".$i."_odp";
+               $odp_ = "odp".$i;
+               $odp_abcd = $answer[0]->$odp_;
+               $odp = explode("||", $answer[0]->$odp);
+               $finalna;
+               switch ($odp_) {
+                    case 'A':
+                         $finalna = $odp[0];
+                         break;
+                    case 'B':
+                         $finalna = $odp[1];
+                         break;
+                    case 'C':
+                         $finalna = $odp[2];
+                       break;
+                    default:
+                         $finalna = $odp[3];
+                         break;
+             }
+         @endphp
+
          <div class="row">
                <div class="col">
                     <div class="card">
                          <div class="card-body">
-                              Pytanie 1: {{ $item->pytanie1 }} Twoja odpowiedź: {{ $item->odp1 }}<br>
-                              {{ $item->pytanie2 }} {{ $item->odp2 }}
-                              {{ $item->pytanie3 }} {{ $item->odp3 }}
-                              {{ $item->pytanie4 }} {{ $item->odp4 }}
-                              {{ $item->pytanie5 }} {{ $item->odp5 }}
-                              {{ $item->pytanie6 }} {{ $item->odp6 }}
+                              Pytanie 1: {{ $answer[0]->$pytansko }}
+                              Twoja odpowiedź: {{ $odp_abcd }}: {{ $finalna }}<br>
+
                          </div>
                     </div>
                </div>
           </div>
           <br>
-          @endforeach
+          @endfor
              
     </div>
 @endsection

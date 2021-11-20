@@ -18,9 +18,7 @@
           
           <br>
           @for ($i = 1; $i <= 6; $i++)
-               {{-- @if ($i == 1 || $i == 3 || $i == 5)
-                    <div class="row">
-               @endif --}}
+
                <div class="row">
                     <div class="col">
                          <div class="card">
@@ -59,6 +57,7 @@
                          <button type="submit" class="btn btn-primary btn-block btn-lg" style="width:100%">Dodaj ankiete</button>
                     </div>
                </div>
+               <br>
           </div>
           </form>
      </div>        

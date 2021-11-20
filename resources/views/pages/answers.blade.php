@@ -6,7 +6,7 @@
          <div class="row">
           @if (sizeof($answers) == 0) 
                <div class="col" style="text-align: center">
-                    BRAK ODPOWIEDZI
+                    <h3>BRAK ODPOWIEDZI</h3>
                </div>
           @endif
           @foreach ($answers as $item)
